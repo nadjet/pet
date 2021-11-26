@@ -25,8 +25,6 @@ from typing import List, Dict, Callable
 import log
 from pet import task_helpers
 from pet.utils import InputExample
-from pet.winery_detection_processor import WineDataProcessor
-from pet.winery_detection_pvp import WineryTaskPVP
 
 logger = log.get_logger('root')
 
