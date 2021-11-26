@@ -25,7 +25,7 @@ from pet.tasks import DataProcessor, PROCESSORS, TASK_HELPERS
 from pet.utils import InputExample
 
 
-class MyTaskDataProcessor(DataProcessor):
+class WineDataProcessor(DataProcessor):
     """
     Example for a data processor.
     """
