@@ -14,7 +14,7 @@ print(len(train_sentences), len(test_sentences))
 
 sentences = []
 count_excluded = 0
-with open("unlabelled.csv") as f:
+with open("unlabeled.csv") as f:
 	for line in f.readlines():
 		sentence = sent_tokenize(line)[0]
 		if sentence not in train_sentences and sentence not in test_sentences and sentence not in dev_sentences:
@@ -24,7 +24,8 @@ with open("unlabelled.csv") as f:
 			print(f"Sentences excluded: {count_excluded}")
 
 # create csv of unlabelled data with train, test or dev without data in tra
-with open("unlabelled0.csv","w") as f:
+with open("unlabeled0.csv","w") as f:
+	wr = writer(f, delimiter=",")
 	for sentence in sentences:
-		f.write(f"{sentence}\n")
+		wr.writerow(["",sentence])
 
