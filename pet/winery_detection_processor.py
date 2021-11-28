@@ -100,7 +100,7 @@ class WineryDataProcessor(DataProcessor):
         with open(path) as f:
             reader = csv.reader(f, delimiter=',')
             for idx, row in enumerate(reader):
-                print("ROW=", row, len(row) WineryDataProcessor.LABEL_COLUMN, WineryDataProcessor.TEXT_A_COLUMN)
+                print("ROW=", row, len(row), WineryDataProcessor.LABEL_COLUMN, WineryDataProcessor.TEXT_A_COLUMN)
                 guid = "%s-%s" % (set_type, idx)
                 label = row[WineryDataProcessor.LABEL_COLUMN]
                 text_a = row[WineryDataProcessor.TEXT_A_COLUMN]
