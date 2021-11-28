@@ -25,7 +25,7 @@ from pet.tasks import DataProcessor, PROCESSORS, TASK_HELPERS
 from pet.utils import InputExample
 
 
-class WineDataProcessor(DataProcessor):
+class WineryDataProcessor(DataProcessor):
     """
     Example for a data processor.
     """
@@ -111,7 +111,7 @@ class WineDataProcessor(DataProcessor):
 
 
 # register the processor for this task with its name
-PROCESSORS[MyTaskDataProcessor.TASK_NAME] = MyTaskDataProcessor
+PROCESSORS[WineryDataProcessor.TASK_NAME] = WineryDataProcessor
 
 # optional: if you have to use verbalizers that correspond to multiple tokens, uncomment the following line
 # TASK_HELPERS[MyTaskDataProcessor.TASK_NAME] = MultiMaskTaskHelper
