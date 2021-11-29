@@ -37,7 +37,6 @@ class Preprocessor(ABC):
         self.wrapper = wrapper
         self.pvp = PVPS[task_name](self.wrapper, pattern_id, verbalizer_file)  # type: PVP
         self.label_map = {label: i for i, label in enumerate(self.wrapper.config.label_list)}
-        print("HELLO",self.label_map)
 
 
     @abstractmethod
