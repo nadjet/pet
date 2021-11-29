@@ -34,8 +34,8 @@ class WineryTaskPVP(PVP):
     # Set this to the verbalizer for the given task: a mapping from the task's labels (which can be obtained using
     # the corresponding DataProcessor's get_labels method) to tokens from the language model's vocabulary
     VERBALIZER = {
-        "1": ["Winery"],
-        "2": ["NotWinery"]
+        "1": ["winery"],
+        "2": ["not a winery"]
     }
 
     def get_parts(self, example: InputExample):

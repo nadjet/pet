@@ -46,7 +46,7 @@ class WineryDataProcessor(DataProcessor):
     UNLABELED_FILE_NAME = "unlabeled.csv"
 
     # Set this to a list of all labels in the train + test data
-    LABELS = ["Winery", "NotWinery"]
+    LABELS = ["1", "2"]
 
     # Set this to the column of the train/test csv files containing the input's text a
     TEXT_A_COLUMN = 1
@@ -100,7 +100,6 @@ class WineryDataProcessor(DataProcessor):
         with open(path) as f:
             reader = csv.reader(f, delimiter=',')
             for idx, row in enumerate(reader):
-                print("ROW=", row, len(row), WineryDataProcessor.LABEL_COLUMN, WineryDataProcessor.TEXT_A_COLUMN)
                 guid = "%s-%s" % (set_type, idx)
                 label = row[WineryDataProcessor.LABEL_COLUMN]
                 text_a = row[WineryDataProcessor.TEXT_A_COLUMN]
@@ -115,4 +114,4 @@ class WineryDataProcessor(DataProcessor):
 PROCESSORS[WineryDataProcessor.TASK_NAME] = WineryDataProcessor
 
 # optional: if you have to use verbalizers that correspond to multiple tokens, uncomment the following line
-# TASK_HELPERS[WineryDataProcessor.TASK_NAME] = MultiMaskTaskHelper
+TASK_HELPERS[WineryDataProcessor.TASK_NAME] = MultiMaskTaskHelper
