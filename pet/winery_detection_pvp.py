@@ -53,12 +53,12 @@ class WineryTaskPVP(PVP):
         # can also be empty).
         if self.pattern_id == 0:
             # this corresponds to the pattern [MASK]: a b
-            return [self.mask, 'This is a wine producer in activity:', text_a], []
+            return [self.mask, 'Is this is a wine producer in activity?', text_a], []
         elif self.pattern_id == 1:
-            return [self.mask, 'This is a winery in activity:', text_a], []
+            return [self.mask, 'Is this a winery in activity?', text_a], []
         elif self.pattern_id == 2:
             # this corresponds to the pattern [MASK] News: a || (b)
-            return [self.mask, 'This is a vineyard in activity:', text_a], []
+            return [self.mask, 'Is this a vineyard in activity?', text_a], []
         else:
             raise ValueError("No pattern implemented for id {}".format(self.pattern_id))
 
