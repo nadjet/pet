@@ -59,14 +59,6 @@ class WineryTaskPVP(PVP):
             return [text_a, 'Active vineyard?', self.mask], []
         elif self.pattern_id == 3:
             return [text_a, 'Active wine estate?', self.mask], []
-        elif self.pattern_id == 4:
-            return ['Active wine producer:', text_a, self.mask], []
-        elif self.pattern_id == 5:
-            return ['Active winery:', text_a, self.mask], []
-        elif self.pattern_id == 6:
-            return ['Active vineyard:', text_a, self.mask], []
-        elif self.pattern_id == 7:
-            return ['Active wine estate:', text_a, self.mask], []
         else:
             raise ValueError("No pattern implemented for id {}".format(self.pattern_id))
 
