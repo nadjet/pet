@@ -34,8 +34,8 @@ class WineryTaskPVP(PVP):
     # Set this to the verbalizer for the given task: a mapping from the task's labels (which can be obtained using
     # the corresponding DataProcessor's get_labels method) to tokens from the language model's vocabulary
     VERBALIZER = {
-        "1": ["winery"],
-        "2": ["not a winery"]
+        "1": ["Yes"],
+        "2": ["No"]
     }
 
     def get_parts(self, example: InputExample):
@@ -52,13 +52,21 @@ class WineryTaskPVP(PVP):
         # For each pattern_id, we define the corresponding pattern and return a pair of text a and text b (where text b
         # can also be empty).
         if self.pattern_id == 0:
-            # this corresponds to the pattern [MASK]: a b
-            return [self.mask, 'Is this is a wine producer in activity?', text_a], []
+            return [text_a, 'Active wine producer?', self.mask], []
         elif self.pattern_id == 1:
-            return [self.mask, 'Is this a winery in activity?', text_a], []
+            return [text_a, 'Active winery?', self.mask], []
         elif self.pattern_id == 2:
-            # this corresponds to the pattern [MASK] News: a || (b)
-            return [self.mask, 'Is this a vineyard in activity?', text_a], []
+            return [text_a, 'Active vineyard?', self.mask], []
+        elif self.pattern_id == 3:
+            return [text_a, 'Active wine estate?', self.mask], []
+        elif self.pattern_id == 4:
+            return ['Active wine producer:', text_a, self.mask], []
+        elif self.pattern_id == 5:
+            return ['Active winery:', text_a, self.mask], []
+        elif self.pattern_id == 6:
+            return ['Active vineyard:', text_a, self.mask], []
+        elif self.pattern_id == 7:
+            return ['Active wine estate:', text_a, self.mask], []
         else:
             raise ValueError("No pattern implemented for id {}".format(self.pattern_id))
 
