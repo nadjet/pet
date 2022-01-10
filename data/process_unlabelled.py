@@ -7,7 +7,7 @@ stanza.download('en')
 nlp = stanza.Pipeline(lang='en', processors='tokenize')
 
 
-num = 500
+num = 600
 train_df = pd.read_csv("train.csv", header=None)
 test_df = pd.read_csv("test.csv", header=None)
 dev_df = pd.read_csv("dev.csv", header=None)

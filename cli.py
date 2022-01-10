@@ -21,8 +21,8 @@ from typing import Tuple
 
 import torch
 
-import pet.winery_detection_pvp
-import pet.winery_detection_processor
+import pet.lactancia_detection_pvp
+import pet.lactancia_detection_processor
 from pet.tasks import PROCESSORS, load_examples, UNLABELED_SET, TRAIN_SET, DEV_SET, TEST_SET, METRICS, DEFAULT_METRICS
 from pet.utils import eq_div
 from pet.wrapper import WRAPPER_TYPES, MODEL_CLASSES, SEQUENCE_CLASSIFIER_WRAPPER, WrapperConfig

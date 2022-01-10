@@ -31,7 +31,7 @@ class WineryDataProcessor(DataProcessor):
     """
 
     # Set this to the name of the task
-    TASK_NAME = "winery-task"
+    TASK_NAME = "lactancia-task"
 
     # Set this to the name of the file containing the train examples
     TRAIN_FILE_NAME = "train.csv"

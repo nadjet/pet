@@ -23,13 +23,13 @@ from pet.pvp import PVP, PVPS
 from pet.utils import InputExample
 
 
-class WineryTaskPVP(PVP):
+class LactanciaTaskPVP(PVP):
     """
     Example for a pattern-verbalizer pair (PVP).
     """
 
     # Set this to the name of the task
-    TASK_NAME = "winery-task"
+    TASK_NAME = "lactancia-task"
 
     # Set this to the verbalizer for the given task: a mapping from the task's labels (which can be obtained using
     # the corresponding DataProcessor's get_labels method) to tokens from the language model's vocabulary
@@ -63,8 +63,8 @@ class WineryTaskPVP(PVP):
             raise ValueError("No pattern implemented for id {}".format(self.pattern_id))
 
     def verbalize(self, label) -> List[str]:
-        return WineryTaskPVP.VERBALIZER[label]
+        return LactanciaTaskPVP.VERBALIZER[label]
 
 
 # register the PVP for this task with its name
-PVPS[WineryTaskPVP.TASK_NAME] = WineryTaskPVP
+PVPS[LactanciaTaskPVP.TASK_NAME] = LactanciaTaskPVP
